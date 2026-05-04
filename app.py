@@ -3,7 +3,7 @@
 import streamlit as st
 from Chefmate_Step_3 import initialize_messages, get_chefmate_response
 
-company_logo = "images/Chef_Mate_Logo.jpg"
+company_logo = "Images/Chef_Mate_Logo.jpg"
 
 
 # this sets up the name in the browser tab
