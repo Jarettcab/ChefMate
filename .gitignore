@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Virtual environment
+.venv/
+
+# RAG files (PDFs - don't push these)
+rag_files/
+
+# Intermediate steps (no longer needed)
+ChefMate_step_1.py
+ChefMate_step_2.py
+build_index.py
+
+# Streamlit secrets
+.streamlit/secrets.toml
+.streamlit/
+
+# PyCharm
+.idea/
