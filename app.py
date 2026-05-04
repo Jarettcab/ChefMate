@@ -28,7 +28,7 @@ if "messages" not in st.session_state:
 # this goes over the previous exchanges in the conversations and prints
 # them in order.
 for msg in st.session_state.messages:
-    if msg["role"] == "user" and "Use this context to help answer" not in msg["content"]:
+    if msg["role"] == "user":
         st.chat_message("user", avatar="🛒").write(msg["content"])
     elif msg["role"] == "assistant":
         st.chat_message("assistant", avatar="👨‍🍳").write(msg["content"])

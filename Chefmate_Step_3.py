@@ -148,10 +148,12 @@ def get_chefmate_response(messages, user_input):
     context = "\n\n".join([doc.page_content for doc in docs])
     augmented_prompt = f"Use this context to help answer:\n\n{context}\n\nQuestion: {user_input}"
 
-    print(augmented_prompt)  # ← this is how you verify RAG is working
+    print(augmented_prompt)
 
-    messages.append({"role": "user", "content": augmented_prompt})
-    results = agent.invoke({"messages": messages})
+    # Store the ORIGINAL message for display, augmented for the agent
+    messages.append({"role": "user", "content": user_input, "display": user_input})
+
+    results = agent.invoke({"messages": messages[:-1] + [{"role": "user", "content": augmented_prompt}]})
     assistant_message = results["messages"][-1].content
     messages.append({"role": "assistant", "content": assistant_message})
     return assistant_message, messages
